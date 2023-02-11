@@ -10,11 +10,12 @@ st.set_page_config(page_title="Workout Counter", page_icon=":muscle:", layout="w
 st.title("Workout Counter")
 st.markdown("### Track your progress with this workout counter")
 
-st.write("")
-st.write("Current workout count: ", counter)
+counter = st.number_input("Enter current workout count", value=counter, step=1)
 
 if st.button("Increment workout count"):
-    increment_counter()
+    counter += 1
 
+st.write("")
+st.write("Current workout count: ", counter)
 st.write("")
 st.write("Stay motivated and keep up the good work!")

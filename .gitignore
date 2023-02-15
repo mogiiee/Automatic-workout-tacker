@@ -1,3 +1,5 @@
 virtualenv
 .DS_Store
 __pycache__/streamlit.cpython-38.pyc
+__pycache__
+.env

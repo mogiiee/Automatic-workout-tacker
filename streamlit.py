@@ -1,4 +1,5 @@
 import streamlit as st
+from streamlit_carousel import st_carousel
 
 counter = 0
 
@@ -21,3 +22,26 @@ st.write("")
 st.write("Stay motivated and keep up the good work!")
 st.write("work well")
 
+st.title("My Beautiful Website")
+
+# Add a button to upload images
+uploaded_file = st.file_uploader("Choose an image", type=["jpg", "jpeg", "png", "gif"])
+
+# If an image is uploaded, display it
+if uploaded_file is not None:
+    st.image(uploaded_file, caption="Uploaded Image")
+
+# Add a button to upload GIFs
+uploaded_gif = st.file_uploader("Choose a GIF", type=["gif"])
+
+# If a GIF is uploaded, display it
+if uploaded_gif is not None:
+    st.image(uploaded_gif, caption="Uploaded GIF")
+
+# Add a carousel with some example images
+st_carousel(images=["https://via.placeholder.com/300.png/09f/fff",
+                    "https://via.placeholder.com/300.png/0cf/fff",
+                    "https://via.placeholder.com/300.png/0fc/fff",
+                    "https://via.placeholder.com/300.png/ccc/fff",
+                    "https://via.placeholder.com/300.png/fff/000"],
+            height=300)

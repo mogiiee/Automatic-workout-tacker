@@ -19,4 +19,5 @@ st.write("")
 st.write("Current workout count: ", counter)
 st.write("")
 st.write("Stay motivated and keep up the good work!")
+st.write("work well")
 

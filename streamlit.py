@@ -1,5 +1,4 @@
 import streamlit as st
-from streamlit_carousel import st_carousel
 
 counter = 0
 
@@ -39,7 +38,7 @@ if uploaded_gif is not None:
     st.image(uploaded_gif, caption="Uploaded GIF")
 
 # Add a carousel with some example images
-st_carousel(images=["https://via.placeholder.com/300.png/09f/fff",
+st.carousel(images=["https://via.placeholder.com/300.png/09f/fff",
                     "https://via.placeholder.com/300.png/0cf/fff",
                     "https://via.placeholder.com/300.png/0fc/fff",
                     "https://via.placeholder.com/300.png/ccc/fff",

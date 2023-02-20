@@ -1,5 +1,7 @@
 from fastapi import FastAPI
 import app.schemas as schemas
+from . import ops
+from fastapi.encoders import jsonable_encoder
 
 app = FastAPI()
 
@@ -8,6 +10,9 @@ def root():
     return {"hello": "world"}
 
 
-@app.get("/data", tags=["test"])
-async def func(info: schemas.UserSignUp):
-    return info
+@app.post("/inserter", tags=["test"])
+async def inserter(info: schemas.UserSignUp):
+    encoded_info = jsonable_encoder(info)
+    ops.inserter(encoded_info)
+    print(type(info))
+    return (True, info)
